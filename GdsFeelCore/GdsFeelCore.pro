@@ -1,14 +1,14 @@
 #CONFIG += debug
 CONFIG += relase
 CONFIG += staticlib
-CONFIG -= i386
-CONFIG += ppc
+#CONFIG -= i386
+#CONFIG += ppc
 debug {
   CONFIG += console
 }
 QT += xml
 TEMPLATE = lib
-HEADERS += -I/opt/local/include
+#HEADERS += -I/opt/local/include
 HEADERS += structure.h \
     qzipwriter_p.h \
     qzipreader_p.h \
@@ -28,4 +28,3 @@ SOURCES += structure.cpp \
     layers.cpp
 LIBS += -L./opt/local/lib/
 LIBS += -lz
-

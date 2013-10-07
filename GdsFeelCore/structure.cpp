@@ -88,7 +88,7 @@ QList<Element*> Structure::elements()
 
 void Structure::clearGeometryCache()
 {
-  qFree(_dataBounds);
+  free(_dataBounds);
   _dataBounds = 0;
 }
 

@@ -3,7 +3,7 @@
 #include "elementdrawer.h"
 
 #include <QtCore>
-#include <QtGui>
+#include <QtWidgets>
 #include "GdsFeelCore/library.h"
 #include "GdsFeelCore/structure.h"
 #include "GdsFeelCore/station.h"
@@ -96,7 +96,7 @@ void MainWindow::currentStructureChaged(const QModelIndex &current,
 //      if (elm->vertices().size() < 2) continue;
       ElementDrawer *ed = ElementDrawer::fromElement(elm, &_station);
       ed->installGraphicsItemOn(_scene);
-      qFree(ed);
+      free(ed);
       ed = 0;
     }
   }

@@ -3,11 +3,10 @@
 # -------------------------------------------------
 TARGET = GdsFeelQt
 SUBDIRS = GdsFeelCore
-CONFIG += ppc
-CONFIG -= i386
 debug {
   CONFIG += console
 }
+QT += widgets
 QT += xml
 TEMPLATE = app
 HEADERS += mainwindow.h \
@@ -16,9 +15,6 @@ SOURCES += mainwindow.cpp \
     main.cpp \
     elementdrawer.cpp
 FORMS += mainwindow.ui
-unix:LIBS += -L./GdsFeelCore/ \
+LIBS += -L$$PWD/GdsFeelCore/ \
     -lGdsFeelCore
-win32:LIBS += -L./GdsFeelCore/debug/ \
-    -lGdsFeelCore
-LIBS += -L./opt/local/lib/
 LIBS += -lz

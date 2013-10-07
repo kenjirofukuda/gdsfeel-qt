@@ -1,7 +1,7 @@
 #ifndef ELEMENTDRAWER_H
 #define ELEMENTDRAWER_H
 
-#include <QtGui>
+#include <QtWidgets>
 #include "GdsFeelCore/structure.h"
 #include "GdsFeelCore/element.h"
 #include "GdsFeelCore/station.h"
@@ -25,6 +25,7 @@ public:
   
 protected:
   QColor colorForElement(Element * ge);
+  void setupPen(QPen &pen);
 
   Element *_element;
   Station *_station;

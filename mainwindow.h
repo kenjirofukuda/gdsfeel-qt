@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtCore>
-#include <QtGui>
+#include <QtWidgets>
 #include "GdsFeelCore/station.h"
 #include "GdsFeelCore/element.h"
 

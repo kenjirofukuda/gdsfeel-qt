@@ -43,12 +43,19 @@ QColor ElementDrawer::colorForElement(Element * ge)
 }
 
 
+void ElementDrawer::setupPen(QPen &pen)
+{
+  pen.setColor(colorForElement(_element));
+  pen.setWidthF(0.0f);
+}
+
+
 void ElementDrawer::installGraphicsItemOn(QGraphicsScene *scene)
 {
   QPainterPath path;
   QPen pen;
   setElementPath(_element, path);
-  pen.setColor(colorForElement(_element));
+  setupPen(pen);
   scene->addPath(path, pen);
 }
 
@@ -106,7 +113,7 @@ void ArefDrawer::installGraphicsItemOn(QGraphicsScene *scene)
     points.clear();
   }
 
-  pen.setColor(colorForElement(_element));
+  setupPen(pen);
   scene->addPath(path, pen);
 }
 

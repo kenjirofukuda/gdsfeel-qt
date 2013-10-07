@@ -1,5 +1,4 @@
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
+#include <QtWidgets>
 #include "mainwindow.h"
 #include "GdsFeelCore/config.h"
 #include "GdsFeelCore/library.h"

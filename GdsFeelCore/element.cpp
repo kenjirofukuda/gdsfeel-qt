@@ -36,12 +36,12 @@ Library *Element::library()
 
 void Element::clearGeometryCache()
 {
-  qFree(_dataBounds);
+  free(_dataBounds);
   _dataBounds = 0;
   if (_outlinePoints) {
     _outlinePoints->clear();
   }
-  qFree(_outlinePoints);
+  free(_outlinePoints);
   _outlinePoints = 0;
 }
 
@@ -357,7 +357,7 @@ ReferenceElement::ReferenceElement()
 
 ReferenceElement::~ReferenceElement()
 {
-  qFree(_mat);
+  free(_mat);
   _mat = 0;
 }
 
@@ -365,7 +365,7 @@ ReferenceElement::~ReferenceElement()
 void ReferenceElement::clearGeometryCache()
 {
   Element::clearGeometryCache();
-  qFree(_mat);
+  free(_mat);
   _mat = 0;
 }
 
@@ -472,7 +472,7 @@ Aref::~Aref()
   if (_transforms) {
     _transforms->clear();
   }
-  qFree(_transforms);
+  free(_transforms);
   _transforms = 0;
 }
 
@@ -480,7 +480,7 @@ Aref::~Aref()
 void Aref::clearGeometryCache()
 {
   Sref::clearGeometryCache();
-  qFree(_transforms);
+  free(_transforms);
   _transforms = 0;
 }
 
