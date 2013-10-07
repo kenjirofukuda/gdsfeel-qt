@@ -8,5 +8,4 @@
 moc_*.cpp
 *Makefile
 *.app
-GdsFeelCore/GdsFeelCore.pro.user
-GdsFeelQt.pro.user
+*.user
