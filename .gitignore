@@ -3,3 +3,10 @@
 *.moc
 *.o
 *.a
+*.pro.*
+*.pro.user
+moc_*.cpp
+*Makefile
+*.app
+GdsFeelCore/GdsFeelCore.pro.user
+GdsFeelQt.pro.user
