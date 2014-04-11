@@ -27,7 +27,7 @@ Structure *Element::structure()
 
 Library *Element::library()
 {
-  if (structure() == 0) {
+  if (structure() == nullptr) {
     return 0;
   }
   return structure()->library();
@@ -76,7 +76,7 @@ void Element::setAttributes(QDomElement e)
 QList<QPointF> Element::outlinePoints()
 {
   QList<QPointF> result;
-  if (_outlinePoints == 0) {
+  if (_outlinePoints == nullptr) {
     _outlinePoints = new QList<QPointF>;
     lookupOutlinePoints(*_outlinePoints);
   }
@@ -89,7 +89,7 @@ const qreal MAX_VAL = 32767;
 
 QRectF Element::dataBounds()
 {
-  if (_dataBounds == 0) {
+  if (_dataBounds == nullptr) {
     _dataBounds = new QRectF;
     resetToSmallBounds(*_dataBounds);
     lookupDataBounds(*_dataBounds);
@@ -167,7 +167,7 @@ Element*
 Element::fromXmlElement(QDomElement e)
 {
   Element *elm = newElementFromType(e.attribute("type"));
-  if (elm == 0) return 0;
+  if (elm == nullptr) return 0;
   elm->setAttributes(e);
   return elm;
 }
@@ -392,7 +392,7 @@ void ReferenceElement::setAttributes(QDomElement e)
 
 QMatrix ReferenceElement::transform()
 {
-  if (_mat == 0) {
+  if (_mat == nullptr) {
     _mat = new QMatrix;
     getTransform(*_mat);
   }
@@ -435,12 +435,12 @@ void Sref::lookupOutlinePoints(QMatrix mat, QList<QPointF> &points)
     qDebug() << "empty reference name" << endl;
     return;
   }
-  if (library() == 0) {
+  if (library() == nullptr) {
     qDebug() << "library not bind" << endl;
     return;
   }
   Structure *ref = library()->structureNamed(referenceName());
-  if (ref == 0) {
+  if (ref == nullptr) {
     qDebug() << "structure not found: " << referenceName() << endl;
     return;
   }
@@ -504,7 +504,7 @@ void Aref::setAttributes(QDomElement e)
 
 QList<QMatrix> Aref::transforms()
 {
-  if (_transforms == 0) {
+  if (_transforms == nullptr) {
     _transforms = new QList<QMatrix>;
     lookupTransforms(*_transforms);
   }

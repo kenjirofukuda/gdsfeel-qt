@@ -1,6 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-06-26T11:39:10
 # -------------------------------------------------
+CONFIG += c++11
 TARGET = GdsFeelQt
 SUBDIRS = GdsFeelCore
 debug {

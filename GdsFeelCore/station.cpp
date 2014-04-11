@@ -7,8 +7,8 @@ namespace Gds {
 
 Station::Station()
 {
-  _library = NULL;
-  _structure = NULL;
+  _library = 0;
+  _structure = 0;
 }
 
 void Station::setup()
@@ -29,7 +29,7 @@ void Station::setActiveLibraryNamed(QString libname)
       return;
     }
   }
-  _library = NULL;
+  _library = 0;
 }
 
 

@@ -21,6 +21,11 @@ public:
                             QList<Element*> &primitives,
                             QList<Element*> &refereces);
 
+  static void installStructure(
+                            Structure *structure,
+                            QGraphicsScene *scene,
+                            Station *station);
+
   static ElementDrawer* fromElement(Element *elm, Station *station);
   
 protected:
@@ -32,12 +37,21 @@ protected:
 };
 
 
+class SrefDrawer : public ElementDrawer
+{
+public:
+  SrefDrawer(Element *elm, Station *station);
+  Sref *srefElement() { return qobject_cast<Sref*>(_element);}
+  virtual void installGraphicsItemOn(QGraphicsScene *scene); // override
+};
+
+
 class ArefDrawer : public ElementDrawer
 {
 public:
   ArefDrawer(Element *elm, Station *station);
   Aref *arefElement() { return qobject_cast<Aref*>(_element);}
-  virtual void installGraphicsItemOn(QGraphicsScene *scene);
+  virtual void installGraphicsItemOn(QGraphicsScene *scene); // override
 };
 
 

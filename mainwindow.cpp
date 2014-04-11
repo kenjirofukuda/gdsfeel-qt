@@ -74,7 +74,7 @@ void MainWindow::currentStructureChaged(const QModelIndex &current,
   if (_scene) {
     _scene->clear();
     delete _scene;
-    _scene = NULL;
+    _scene = 0;
   }
   _scene = new QGraphicsScene;
   QList<Element *> primitives;
@@ -89,7 +89,7 @@ void MainWindow::currentStructureChaged(const QModelIndex &current,
 
   if (displayElements.size() > 0) {
     foreach (Element *elm, displayElements) {
-      if (elm == 0) {
+      if (elm == nullptr) {
         qDebug() << "Null Element" << endl;
         continue;
       }
@@ -97,7 +97,7 @@ void MainWindow::currentStructureChaged(const QModelIndex &current,
       ElementDrawer *ed = ElementDrawer::fromElement(elm, &_station);
       ed->installGraphicsItemOn(_scene);
       free(ed);
-      ed = 0;
+      ed = nullptr;
     }
   }
   _view->setScene(_scene);

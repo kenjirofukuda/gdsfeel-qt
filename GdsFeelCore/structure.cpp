@@ -98,7 +98,7 @@ const qreal MAX_VAL = 32767;
 QRectF Structure::dataBounds()
 {
   // FIXME: duplicate implement Element
-  if (_dataBounds == 0) {
+  if (_dataBounds == nullptr) {
     _dataBounds = new QRectF;
     Element::resetToSmallBounds(*_dataBounds);
     lookupDataBounds(*_dataBounds);

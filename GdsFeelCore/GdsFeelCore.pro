@@ -1,6 +1,7 @@
 #CONFIG += debug
 CONFIG += relase
 CONFIG += staticlib
+CONFIG += c++11
 #CONFIG -= i386
 #CONFIG += ppc
 debug {
@@ -26,5 +27,5 @@ SOURCES += structure.cpp \
     station.cpp \
     layer.cpp \
     layers.cpp
-LIBS += -L./opt/local/lib/
+#LIBS += -L./opt/local/lib/
 LIBS += -lz

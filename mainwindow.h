@@ -11,7 +11,7 @@ namespace Ui
     class MainWindow;
 }
 
-class Gds::Element;
+// class Gds::Element;
 
 class MainWindow : public QMainWindow
 {

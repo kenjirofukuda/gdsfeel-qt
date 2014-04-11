@@ -23,9 +23,7 @@ const QString LAYERS_FILENAME = "layers.xml";
 
 static void getSubTree(QDir& base, QFileInfoList &infos)
 {
-  QDir::Filters filters =
-        QDir::AllEntries
-      | QDir::NoDotAndDotDot;
+  QDir::Filters filters = QDir::AllEntries | QDir::NoDotAndDotDot;
   QFileInfoList entries = base.entryInfoList(filters);
   foreach (QFileInfo info , entries) {
     infos.push_back(info);

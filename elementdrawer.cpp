@@ -84,6 +84,14 @@ void ElementDrawer::layerOrderedElements(
   qSort(primitives.begin(), primitives.end(), LayerLessThan);
 }
 
+void ElementDrawer::installStructure(
+    Structure *structure,
+    QGraphicsScene *scene,
+    Station *station)
+{
+
+}
+
 
 ElementDrawer* ElementDrawer::fromElement(Element *elm, Station *station)
 {
@@ -94,6 +102,14 @@ ElementDrawer* ElementDrawer::fromElement(Element *elm, Station *station)
   return new ElementDrawer(elm, station);
 }
 
+SrefDrawer::SrefDrawer(Element *elm, Station *station)
+  : ElementDrawer(elm, station)
+{
+}
+
+void SrefDrawer::installGraphicsItemOn(QGraphicsScene * __attribute__((unused)) scene)
+{
+}
 
 ArefDrawer::ArefDrawer(Element *elm, Station *station)
   : ElementDrawer(elm, station)
